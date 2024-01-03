@@ -1,6 +1,13 @@
-const initialStateCustomer = { fullName: "", nationalId: "", createAt: "" };
+import { createSlice } from "@reduxjs/toolkit";
 
-export default function customerReducer(state = initialStateCustomer, action) {
+const initialState = { fullName: "", nationalId: "", createAt: "" };
+
+const customerSlice = createSlice({
+  name: "customer",
+  initialState: initialState,
+});
+
+export default function customerReducer(state = initialState, action) {
   switch (action.type) {
     case "customer/createCustomer":
       return {
